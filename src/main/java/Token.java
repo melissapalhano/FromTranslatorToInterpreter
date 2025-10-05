@@ -1,32 +1,13 @@
 public class Token {
-    public enum Type {
-        NUMBER,
-        PLUS,
-        MINUS,
-        EOF
-    }
+    final TokenType type;
+    final String lexeme;
     
-    private Type type;
-    private String value;
-    
-    public Token(Type type, String value) {
+    public Token(TokenType type, String lexeme) {
         this.type = type;
-        this.value = value;
+        this.lexeme = lexeme;
     }
     
-    public Type getType() {
-        return type;
-    }
-    
-    public String getValue() {
-        return value;
-    }
-    
-    @Override
     public String toString() {
-        return "Token{" +
-                "type=" + type +
-                ", value='" + value + '\'' +
-                '}';
+        return "<" + type + ">" + lexeme + "</" + type + ">";
     }
 }
